@@ -1,0 +1,14 @@
+/* .big-title h1:not(.contrast-font){
+  z-index: 10;
+} */
+
+.big-title .contrast-font{
+  /* transform: scaleY(0.7); */
+  letter-spacing: 1rem;
+}
+
+@media(min-width: 991px) {
+  .big-title .display-1{
+    font-size: 10rem;
+  }
+}

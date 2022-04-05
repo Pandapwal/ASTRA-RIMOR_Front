@@ -1,0 +1,53 @@
+.contact-info {
+  background-size: cover;
+}
+
+.contact-info div {
+  background: var(--background-color)
+}
+
+.form-group label span, .required-asterix {
+  padding: 0 3px;
+  color: var(--danger-color);
+}
+
+input[type=text],
+input[type=email],
+input[type=tel],
+textarea.form-control {
+  color: var(--font-color);
+  background: transparent;
+  outline: none;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid var(--font-muted-color);
+}
+
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=tel]:focus,
+textarea.form-control:focus {
+  color: var(--font-color);
+  background: transparent;
+  outline: none;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid var(--font-muted-color);
+  box-shadow: none;
+}
+
+.input-underline {
+  background: var(--active-link-color);
+  width: 0;
+  height: 2px;
+  transform: translateY(-1px);
+  transition: .3s;
+}
+
+input[type=text]:focus + .input-underline,
+input[type=email]:focus + .input-underline,
+input[type=tel]:focus + .input-underline,
+textarea.form-control:focus + .input-underline {
+  width: 100%;
+  transition: .3s;
+}

@@ -1,0 +1,102 @@
+.sidenav nav, .sidenav .sidenav-toggler {
+  z-index: 1050;
+}
+
+.sidenav nav{
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 300px;
+  height: 100vh;
+  background-color: #343441;
+  box-shadow: 3px 0 4px #00000030;
+  transition: .3s;
+}
+
+nav a {
+  text-decoration: none;
+  font-weight: 600;
+  padding: 1rem .5rem;
+  color: var(--font-color);
+}
+nav .nav-link-container {
+  position: relative;
+}
+nav .nav-link-container a {
+  display: flex;
+}
+nav .nav-link-container:not(:last-of-type) {
+  border-bottom: 1px solid #fff;
+}
+
+nav a:not(.active):hover {
+  color: var(--active-link-color);
+}
+
+nav a.active {
+  text-transform: uppercase;
+  color: var(--active-link-color);
+}
+
+.nav-link-effect.active {
+  position: absolute;
+  top: 0px;
+  left: 10%;
+  height: 100%;
+  width: 15px;
+  background-image: linear-gradient(to right, transparent, #fff, transparent);
+  /* animation: sliding-background 3s ease-in 1s infinite; */
+}
+
+
+@keyframes sliding-background {
+  0%    { transform: skew(-15deg); }
+  15%   { transform: skew(-15deg); left: 110%; }
+  100%  { transform: skew(-15deg); left: 110%; }
+}
+
+.sidenav nav.toggled{
+  left: 0;
+  transition: .3s;
+}
+
+.sidenav .sidenav-toggler {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: fit-content;
+  transition: .3s;
+}
+
+.sidenav .sidenav-toggler.toggled {
+  left: 255px;
+  transition: .3s;
+}
+
+.sidenav-toggler.toggled .sidenav-toggler-title {
+  background: linear-gradient(to right, #1e1d24, var(--background-color));
+  /* border: solid 1px #fff; */
+}
+.sidenav-toggler.toggled .sidenav-toggler-title i {
+  transform: rotate(450deg);
+  /* transition: .3s; */
+}
+
+.sidenav-toggler .sidenav-toggler-title {
+  border: solid 1px transparent;
+  transition: .3s;
+}
+.sidenav-toggler .sidenav-toggler-title:hover {
+  border: solid 1px var(--active-link-color);
+  cursor: pointer;
+  /* background-color: #fff; */
+  color: var(--active-link-color);
+}
+
+.sidenav-toggler .sidenav-toggler-title:hover i {
+  color: var(--font-color);
+}
+
+.sidenav-toggler .sidenav-toggler-title i {
+  transition: .3s;
+}

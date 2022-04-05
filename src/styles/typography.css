@@ -1,0 +1,44 @@
+/* FONT COLORS */
+.text-dark {
+  color: var(--background-color)!important;
+}
+.text-contrast {
+  color: var(--contrast-color);
+}
+.text-transparent {
+  color: transparent;
+}
+
+/* FONT WEIGHTS */
+
+.fw-100 {font-weight: 100;}
+.fw-200 {font-weight: 200;}
+.fw-300 {font-weight: 300;}
+.fw-400 {font-weight: 400;}
+.fw-500 {font-weight: 500;}
+.fw-600 {font-weight: 600;}
+.fw-700 {font-weight: 700;}
+.fw-800 {font-weight: 800;}
+.fw-900 {font-weight: 900;}
+
+/* FONT SIZES */
+
+.fs-small {
+  font-size: .8rem;
+}
+
+/* LINE HEIGHTS */
+
+.lh-1 {line-height: 0.1;}
+.lh-3 {line-height: 0.3;}
+.lh-5 {line-height: 0.5;}
+.lh-7 {line-height: 0.7;}
+
+
+/* OULTINE STYLES */
+.text-outline {
+  -webkit-text-stroke: 1px var(--font-color);
+}
+.text-outline-contrast {
+  -webkit-text-stroke: 1px var(--contrast-color);
+}

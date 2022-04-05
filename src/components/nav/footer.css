@@ -1,0 +1,28 @@
+footer {
+  background: var(--background-color);
+  color: var(--font-muted-color);
+}
+
+footer a {
+  color: var(--font-muted-color);
+  text-decoration: none;
+}
+
+footer a:not(.fa):hover {
+  color: var(--hover-link-color);
+}
+
+.fa-github:hover, a.github:hover {
+  color: #4078c0!important;
+}
+.fa-twitter:hover, a.twitter:hover {
+  color: #1DA1F2!important;
+}
+.icon-container:hover, a.instagram:hover .icon-container {
+  color: #fff!important;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)!important;
+  border-radius: 5px;
+}
+.fa-linkedin-in:hover, a.linkedin:hover {
+  color: #0e76a8!important;
+}

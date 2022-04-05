@@ -1,0 +1,28 @@
+@import url('./styles/scrollbar.css');
+@import url('./styles/themes.css');
+@import url('./styles/typography.css');
+
+.vh-100 {height: 100vh;}
+.vw-100 {width: 100wh;}
+.v-100 {height: 100vh;width: 100vw;}
+
+.text-higlight {
+  color: var(--active-link-color);
+}
+
+.bg-contrast {
+  background: var(--contrast-color);
+  color: var(--font-color);
+}
+.btn-contrast {
+  background: var(--contrast-color-fade);
+  color: var(--font-color);
+}
+.btn-contrast:hover {
+  background: var(--contrast-color);
+  color: var(--font-color);
+}
+
+.contrast-font {
+  font-family: var(--contrast-font);
+}

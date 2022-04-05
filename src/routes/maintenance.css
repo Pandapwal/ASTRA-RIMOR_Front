@@ -1,0 +1,41 @@
+.maintenance-container {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.maintenance-container div.fw-200 {
+  letter-spacing: 3px;
+}
+
+.maintenance-title h1 {
+  text-align: center;
+  overflow: hidden;
+}
+
+.maintenance-title h1 p {
+  text-align: center;
+  font-style: italic;
+}
+
+@keyframes waving-letter {
+  0% {
+    font-weight: 100;
+  }
+  40% {
+    font-weight: 100;
+  }
+  50% {
+    font-weight: 900;
+    text-shadow: 1px 0 5px #fff;
+  }
+  60% {
+    font-weight: 100;
+  }
+  100% {
+    font-weight: 100;
+  }
+}

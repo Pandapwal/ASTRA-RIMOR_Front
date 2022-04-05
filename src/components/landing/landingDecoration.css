@@ -1,0 +1,131 @@
+/* dimensions are overriden by bootstrap classes */
+/* in case you don't espcially like the default ones */
+
+/* positions are fixed, but could be used as classes for more flexibility */
+
+.landing-decoration > div {
+  position: inherit;
+}
+
+.pos-1 { top: 60%; left: 60%; }
+.pos-2 { top: calc(35% + 2px); left: calc(31% + 5px); }
+.pos-3 { top: 25%; left: 25%; }
+.pos-4 { top: 30%; left: 75%; }
+
+.siz-1 { width: 10vw; height: 10vw; }
+.siz-2 { width: 10vw; height: 15vw; }
+.siz-3 { width: 20vw; height: 20vw; }
+.siz-4 { width: 25vw; height: 25vw; }
+
+.landing-decoration .circle {
+  border-radius: 5vw;
+  background: var(--font-muted-color);
+  animation: pulse 4s ease-out infinite;
+}
+
+.landing-decoration .orbital {
+  top: calc(60% - 5vw);
+  left: calc(60% - 5vw);
+  border-radius: 50%;
+  background: 
+    repeating-conic-gradient(
+        var(--font-muted-color) 0 calc(360deg/20 - 17.5deg), 
+        transparent 0 calc(360deg/20));
+  -webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 40px),#fff calc(100% - 41px));
+          mask:radial-gradient(farthest-side,transparent calc(100% - 40px),#fff calc(100% - 41px));
+  animation: full-rotation 80s linear infinite;
+}
+
+.landing-decoration .orbital-big {
+  top: calc(60% - 7.5vw);
+  left: calc(60% - 7.5vw);
+  border-radius: 50%;
+  background: 
+    repeating-conic-gradient(
+        transparent 0 calc(360deg/20 - 17.5deg),
+        transparent 0 calc(360deg/20 - 9deg),
+        var(--font-muted-color) 0 calc(360deg/20 - 8.75deg), 
+        transparent 0 calc(360deg/20));
+  -webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 70px),#fff calc(100% - 71px));
+          mask:radial-gradient(farthest-side,transparent calc(100% - 70px),#fff calc(100% - 71px));
+  animation: orbital-pulse 20s linear infinite forwards;
+}
+
+.landing-decoration .dots {
+  background: radial-gradient(var(--font-muted-color) 1px, var(--background-color) 1px); /* background NOT transparent for landing page use  */
+  background-position: 0 0;
+	background-size: 20px 20px;
+}
+
+.landing-decoration .thin-dots {
+  background: linear-gradient(45deg, var(--font-muted-color) 1px, transparent 1px);
+  background-position: 50% 50%;
+	background-size: 20px 20px;
+  animation: full-rotation 120s linear infinite;
+}
+
+.landing-decoration .stripes {
+  background: repeating-linear-gradient(
+    135deg,
+    transparent,
+    transparent 20px,
+    var(--font-extra-muted-color) 20px, /*  ->  spacing between stripes   */
+    var(--font-extra-muted-color) 21px  /*  ->  stripes width + spacing   */
+  );
+}
+
+.line-holder {
+  top: 50%;
+  transform: translateY(-25%);
+}
+
+.line {position: inherit;
+  height: 1px;
+  width: 150px;
+  left: -150px;
+  background: var(--font-color);
+}
+
+@keyframes pulse {
+  0%    { background: var(--font-muted-color); }
+  30%   { background: var(--font-muted-color); transform: scale(1);}
+  50%   { background: var(--font-color); transform: scale(1.2);}
+  70%   { background: var(--font-muted-color); transform: scale(1);}
+  100%  { background: var(--font-muted-color); }
+}
+
+@keyframes orbital-pulse {
+  0%    { transform: rotate(0deg);}
+  30%   { transform: rotate(54deg) scale(1);}
+  50%   { transform: rotate(90deg) scale(1.2);}
+  70%   { transform: rotate(126deg) scale(1);}
+  100%  { transform: rotate(180deg);}
+}
+
+@keyframes dots-rotation {
+  0%    { transform: rotate(0deg); }
+  100%  { transform: rotate(-90deg); }
+}
+
+@keyframes full-rotation {
+  0%    { transform: rotate(0deg);}
+  100%  { transform: rotate(360deg);}
+}
+
+@keyframes arrow-fly {
+  0%    {transform: translateX(0);}
+  100%  {width: 50px; transform: translateX(calc(110vw + 150px)); }
+}
+
+.shadow-shake {
+  animation: shadow-shake .5s linear infinite alternate;
+}
+
+@keyframes shadow-shake {
+  0%    {text-shadow: 1px 2px #00fde8;}
+  20%   {text-shadow: 0px -1px #f500fd;}
+  40%   {text-shadow: 3px 0px #00fde8;}
+  60%   {text-shadow: 0px 3px #f500fd;}
+  80%   {text-shadow: -3px -2px #00fde8;}
+  100%  {text-shadow: 2px -2px #f500fd;}
+}
