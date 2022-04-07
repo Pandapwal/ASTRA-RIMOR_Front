@@ -24,33 +24,48 @@ nav .nav-link-container {
 }
 nav .nav-link-container a {
   display: flex;
+  position: inherit;
 }
 nav .nav-link-container:not(:last-of-type) {
   border-bottom: 1px solid #fff;
 }
 
-nav a:not(.active):hover {
-  color: var(--active-link-color);
+nav .nav-link-container a:hover {
+  background-color: var(--font-color);
 }
-
 nav a.active {
-  text-transform: uppercase;
   color: var(--active-link-color);
 }
+nav .nav-link-container a.active, nav .nav-link-container a:not(.active):hover {
+  color: var(--active-link-color);
+  text-transform: uppercase;
+  background-color: var(--font-color);
+  font-weight: 800;
+}
 
-.nav-link-effect.active {
-  position: absolute;
-  top: 0px;
-  left: 10%;
-  height: 100%;
-  width: 15px;
-  background-image: linear-gradient(to right, transparent, #fff, transparent);
-  /* animation: sliding-background 3s ease-in 1s infinite; */
+nav .nav-link-container a.active:after {
+  content: '///';
+  position: relative;
+  top: 0;
+  right: 0;
+  text-align: end;
+  height: auto;
+  width: 90%;
+  padding: 0 .5rem;
+  overflow: hidden;
+  color: var(--contrast-color);
+  background-color: var(--font-color);
+  animation: space-letters ease-out .2s forwards;
+}
+
+@keyframes space-letters {
+  0%  {letter-spacing: 1rem;}
+  100% {letter-spacing: 0;}
 }
 
 
 @keyframes sliding-background {
-  0%    { transform: skew(-15deg); }
+  0%    { transform: skew(-15deg); left: -30px}
   15%   { transform: skew(-15deg); left: 110%; }
   100%  { transform: skew(-15deg); left: 110%; }
 }
@@ -75,11 +90,15 @@ nav a.active {
 
 .sidenav-toggler.toggled .sidenav-toggler-title {
   background: linear-gradient(to right, #1e1d24, var(--background-color));
-  /* border: solid 1px #fff; */
 }
+
 .sidenav-toggler.toggled .sidenav-toggler-title i {
-  transform: rotate(450deg);
-  /* transition: .3s; */
+  animation: rotate-burger .3s ease-out forwards;
+}
+
+@keyframes rotate-burger {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(450deg);}
 }
 
 .sidenav-toggler .sidenav-toggler-title {
@@ -87,16 +106,13 @@ nav a.active {
   transition: .3s;
 }
 .sidenav-toggler .sidenav-toggler-title:hover {
-  border: solid 1px var(--active-link-color);
   cursor: pointer;
-  /* background-color: #fff; */
+  font-weight: 600;
+  background: var(--font-color);
   color: var(--active-link-color);
 }
 
-.sidenav-toggler .sidenav-toggler-title:hover i {
-  color: var(--font-color);
-}
-
 .sidenav-toggler .sidenav-toggler-title i {
-  transition: .3s;
+  animation: rotate-burger .3s ease-out reverse forwards;
+  transition: 0s;
 }

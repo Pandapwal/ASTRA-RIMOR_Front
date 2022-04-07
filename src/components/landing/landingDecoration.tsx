@@ -46,4 +46,4 @@ export default function LandingDecoration() {
 
 // /!\ ATTENTION /!\
 // this component takes parent's full size
-// inlude it first so it is overlapped by the interactive content 
+// include it first so it is overlapped by the interactive content 

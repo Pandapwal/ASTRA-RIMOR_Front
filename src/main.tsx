@@ -11,6 +11,7 @@ import './index.css'
 import App from './App'
 import Landing from './routes/Landing'
 import Portfolio from './routes/Portfolio'
+import Experience from './routes/Experience'
 import Other from './routes/Other'
 import Contact from './routes/Contact'
 
@@ -26,7 +27,7 @@ ReactDOM.render(
         <Route path='/' element={<App />}>
           <Route path='' element={<Landing />}/>
           <Route path='portfolio' element={<Portfolio />}/>
-          <Route path='autre' element={<Other />}/>
+          <Route path='experience' element={<Experience />}/>
           <Route path='contact' element={<Contact />}/>
 
           <Route path='mentions-legales' element={<Legal />} />

@@ -8,6 +8,7 @@ import '../App.css'
 export default function Contact() {
 
   useEffect(() => {
+    document.title = 'ASTRA RIMOR / Contact'
     window.scrollTo(0,0)
   },[])
 

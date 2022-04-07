@@ -25,8 +25,9 @@ export default function Footer({ theme = 'normal'}: FooterProps) {
         </Link>
       </div>
       <div className='d-flex col justify-content-end align-items-center p-3'>
-        <Link to='/'><i className='fa-brands fa-twitter fa-xl'></i></Link>
-        <Link to='/' className='mx-3'><p className='icon-container m-0'><i className='fa-brands fa-instagram fa-xl'></i></p></Link>
+        <Link to='/' className='me-3'><i className='fa-brands fa-github fa-xl'></i></Link>
+        <Link to='/' className='me-3'><i className='fa-brands fa-twitter fa-xl'></i></Link>
+        <Link to='/' className='me-3'><p className='icon-container m-0'><i className='fa-brands fa-instagram fa-xl'></i></p></Link>
         <Link to='/'><i className='fa-brands fa-linkedin-in fa-xl'></i></Link>
       </div>
     </footer>

@@ -1,9 +1,13 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import logo from '../logo.svg'
 import '../App.css'
 
 export default function Legal() {
-  const [count, setCount] = useState(0)
+  
+  useEffect(() => {
+    document.title = 'ASTRA RIMOR / Mentions légales'
+    window.scrollTo(0,0)
+  },[])
 
   return (
     <div className="App">

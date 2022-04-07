@@ -15,6 +15,7 @@ export default function Landing() {
   ]
 
   useEffect(() => {
+    document.title = 'ASTRA RIMOR'
     window.scrollTo(0,0)
   },[])
 

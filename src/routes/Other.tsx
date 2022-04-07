@@ -6,10 +6,8 @@ export default function Other() {
   const [count, setCount] = useState(0)
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Other</h1>
-      </header>
+    <div className='route-container vh-100'>
+      <h1>Other</h1>
     </div>
   )
 }

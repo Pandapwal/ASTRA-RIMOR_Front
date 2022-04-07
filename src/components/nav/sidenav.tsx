@@ -4,6 +4,8 @@ import { name, version } from '../../../package.json'
 
 import './sidenav.css'
 
+import bg from '../../assets/images/v_m_c.png'
+
 type SidenavProps = {
   theme?: string,
   titleSlice?: number
@@ -23,8 +25,8 @@ export default function Sidenav({ theme = 'normal', titleSlice = 0 }: SidenavPro
       case '/portfolio':
         setActive('portfolio')
         break
-      case '/autre':
-        setActive('autre')
+      case '/experience':
+        setActive('experience')
         break
       case '/contact':
         setActive('contact')
@@ -42,24 +44,25 @@ export default function Sidenav({ theme = 'normal', titleSlice = 0 }: SidenavPro
 
   return (
     <div className='sidenav'>
-      <nav className={`d-flex flex-column p-3 ${theme}-theme ${toggled?'toggled':''}`}>
+      <nav className={`d-flex flex-column p-3 ${theme}-theme ${toggled?'toggled':''}`}
+      style={{background: `linear-gradient(#00000080 80%,#000000D0), url(${bg})`}}>
         <h2 className='py-2 text-uppercase'>{brand}</h2>
 
           <div className='nav-link-container overflow-hidden'>
             <Link to='/' className={`${active==''?'active':''}`} >Accueil</Link>
-            <div className={`nav-link-effect ${active==''?'active':''}`}></div>
+            <div className={`nav-link-effect ${active==''?'active':''}`} data-title='ACCUEIL'></div>
           </div>
-          <div className='nav-link-container'>
+          <div className='nav-link-container overflow-hidden'>
             <Link to='/portfolio' className={active=='portfolio'?'active':''} >Portfolio</Link>
-            <div className={`nav-link-effect ${active=='portfolio'?'active':''}`}></div>
+            <div className={`nav-link-effect ${active=='portfolio'?'active':''}`} data-title='PORTFOLIO'></div>
           </div>
-          <div className='nav-link-container'>
-            <Link to='/autre' className={active=='autre'?'active':''} >Autre</Link>
-            <div className={`nav-link-effect ${active=='autre'?'active':''}`}></div>
+          <div className='nav-link-container overflow-hidden'>
+            <Link to='/experience' className={active=='experience'?'active':''} >Expérience</Link>
+            <div className={`nav-link-effect ${active=='autre'?'active':''}`} data-title='EXPÉRIENCE'></div>
           </div>
-          <div className='nav-link-container'>
+          <div className='nav-link-container overflow-hidden'>
             <Link to='/contact' className={active=='contact'?'active':''} >Contact</Link>
-            <div className={`nav-link-effect ${active=='contact'?'active':''}`}></div>
+            <div className={`nav-link-effect ${active=='contact'?'active':''}`} data-title='CONTACT'></div>
           </div>
         
         <div className='d-flex col justify-content-center align-items-center p-3'>
