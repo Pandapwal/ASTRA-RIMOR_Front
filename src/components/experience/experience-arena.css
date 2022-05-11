@@ -1,0 +1,38 @@
+.experience-arena {
+  position: absolute;
+  background: rgb(25, 58, 121);
+}
+
+.experience-arena .ball {
+  --transform-duration: 5s;
+  --transform-start-y: 0%;
+  --transform-start-x: 0%;
+  --transform-end-y: 0%;
+  --transform-end-x: 0%;
+  --transform-start-width: 150px;
+  --transform-end-width: 150px;
+  position: absolute;
+  border-radius: 50%;
+  border: solid 3px #444;
+  transform-origin: center;
+  animation: move-ball var(--transform-duration) ease-in-out forwards infinite;
+}
+
+.experience-arena .ball:hover {
+  background: #097ce7;
+}
+
+@keyframes move-ball {
+  0%  {
+    left: var(--transform-start-x);
+    top: var(--transform-start-y);
+    width: var(--transform-start-width);
+    height: var(--transform-start-width);
+  }
+  100%{
+    left: var(--transform-end-x);
+    top: var(--transform-end-y);
+    width: var(--transform-end-width);
+    height: var(--transform-end-width);
+  }
+}

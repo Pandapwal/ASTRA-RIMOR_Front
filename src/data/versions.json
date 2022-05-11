@@ -1,0 +1,41 @@
+[
+  {
+    "version":"0.1.0",
+    "date":"25/03/2022",
+    "description":"version initiale.",
+    "added":[
+      "blah blah blah blah",
+      "blah blah blah blah"
+    ],
+    "modified":[
+      "blah blah blah blah",
+      "blah blah blah blah"
+    ]
+  },
+  {
+    "version":"0.1.1",
+    "date":"28/03/2022",
+    "description":"Ajout de la page expérience.",
+    "added":[
+      "blah blah blah blah",
+      "blah blah blah blah"
+    ],
+    "removed":[
+      "blah blah blah blah",
+      "blah blah blah blah"
+    ]
+  },
+  {
+    "version":"0.1.2",
+    "date":"30/03/2022",
+    "description":"modification de la page d'accueil.",
+    "modified":[
+      "blah blah blah blah",
+      "blah blah blah blah"
+    ],
+    "removed":[
+      "blah blah blah blah",
+      "blah blah blah blah"
+    ]
+  }
+]

@@ -1,0 +1,16 @@
+.article .title {
+  border-bottom: solid 1px var(--font-muted-color);
+}
+
+.article .version {
+  background: var(--font-color);
+  color: var(--contrast-color);
+}
+
+.article .change-type {
+  border-radius: 5px;
+  display: inline-block;
+}
+.article .change-type.added {background: var(--success-color);}
+.article .change-type.modified {background: var(--warning-color);}
+.article .change-type.removed {background: var(--danger-color);}
