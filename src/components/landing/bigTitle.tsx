@@ -15,7 +15,6 @@ export default function BigTitle({upperTitle = 'ASTRA', lowerTitle = 'RIMOR', sp
   const[shaking, setShaking] = useState<boolean>(false)
 
   function randomizeLetters(title: string[]) {
-    console.log('called')
     let characters: string[] = ['%#@!?','スター','звезда','stella','estrella']
     let arr: string = ''
     let index: number = Math.floor((Math.random()*4)+.5)
@@ -23,13 +22,10 @@ export default function BigTitle({upperTitle = 'ASTRA', lowerTitle = 'RIMOR', sp
     arr = characters[index>4?4:index]
     setUpperString(arr.split(''))
     setShaking(true)
-   
-    console.log('arr : ',arr)
   }
 
   useEffect(() => {
     if (split === true) {
-      console.log('looped')
       setUpperString(upperTitle.split(''))
       setLowerString(lowerTitle.split(''))
       // letterInterval.current = setInterval(() => {

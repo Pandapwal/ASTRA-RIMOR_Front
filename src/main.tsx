@@ -33,6 +33,8 @@ ReactDOM.render(
           <Route path='mentions-legales' element={<Legal />} />
           <Route path='notes-de-mise-a-jour' element={<PatchNotes />}/>
 
+          <Route path='eduardo' element={<Other />} />
+
           <Route path='*' element={<NotFound />} />
         </Route>
       </Routes>

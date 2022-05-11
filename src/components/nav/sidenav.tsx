@@ -48,35 +48,35 @@ export default function Sidenav({ theme = 'normal', titleSlice = 0 }: SidenavPro
       style={{background: `linear-gradient(#00000080 80%,#000000D0), url(${bg})`}}>
         <h2 className='py-2 text-uppercase'>{brand}</h2>
 
-          <div className='nav-link-container overflow-hidden'>
-            <Link to='/' className={`${active==''?'active':''}`} >Accueil</Link>
+          <div className='nav-link-container my-2 overflow-hidden'>
+            <Link to='/' className={`${active==''?'active':''}`} onClick={() => setToggled(false)}>Accueil</Link>
             <div className={`nav-link-effect ${active==''?'active':''}`} data-title='ACCUEIL'></div>
           </div>
-          <div className='nav-link-container overflow-hidden'>
-            <Link to='/portfolio' className={active=='portfolio'?'active':''} >Portfolio</Link>
+          <div className='nav-link-container my-1 overflow-hidden'>
+            <Link to='/portfolio' className={active=='portfolio'?'active':''} onClick={() => setToggled(false)} >Portfolio</Link>
             <div className={`nav-link-effect ${active=='portfolio'?'active':''}`} data-title='PORTFOLIO'></div>
           </div>
-          <div className='nav-link-container overflow-hidden'>
-            <Link to='/experience' className={active=='experience'?'active':''} >Expérience</Link>
+          <div className='nav-link-container my-1 overflow-hidden'>
+            <Link to='/experience' className={active=='experience'?'active':''} onClick={() => setToggled(false)} >Expérience</Link>
             <div className={`nav-link-effect ${active=='autre'?'active':''}`} data-title='EXPÉRIENCE'></div>
           </div>
-          <div className='nav-link-container overflow-hidden'>
-            <Link to='/contact' className={active=='contact'?'active':''} >Contact</Link>
+          <div className='nav-link-container my-1 overflow-hidden'>
+            <Link to='/contact' className={active=='contact'?'active':''} onClick={() => setToggled(false)} >Contact</Link>
             <div className={`nav-link-effect ${active=='contact'?'active':''}`} data-title='CONTACT'></div>
           </div>
         
         <div className='d-flex col justify-content-center align-items-center p-3'>
-          <Link to='/' className='github link-icon'><i className='fa-brands fa-github fa-2xl'></i></Link>
-          <Link to='/' className='twitter link-icon'><i className='fa-brands fa-twitter fa-2xl'></i></Link>
-          <Link to='/' className='instagram link-icon'><p className='icon-container m-0'><i className='fa-brands fa-instagram fa-2xl'></i></p></Link>
-          <Link to='/' className='linkedin link-icon'><i className='fa-brands fa-linkedin-in fa-2xl'></i></Link>
+          <a href='https://github.com/Pandapwal' className='github link-icon' onClick={() => setToggled(false)}><i className='fa-brands fa-github fa-2xl'></i></a>
+          {/* <a href='/' className='twitter link-icon' onClick={() => setToggled(false)}><i className='fa-brands fa-twitter fa-2xl'></i></a> */}
+          <a href='https://www.instagram.com/astra_rimor' className='instagram link-icon' onClick={() => setToggled(false)}><p className='icon-container m-0'><i className='fa-brands fa-instagram fa-2xl'></i></p></a>
+          <a href='https://www.linkedin.com/in/théo-scotton/' target='_blank' className='linkedin link-icon' onClick={() => setToggled(false)}><i className='fa-brands fa-linkedin-in fa-2xl'></i></a>
         </div>
 
-        <div className='d-flex flex-row mt-auto'>
+        <div className='d-flex flex-row mt-auto sidenav-footer'>
           <div className='col'>
             <p className='m-0 text-muted fs-small'>
               &#169;2022 -&nbsp;
-              <Link to={'/'} className='fw-600 p-0'>
+              <Link to={'/'} className='fw-600 p-0' onClick={() => setToggled(false)}>
                 ASTRA RIMOR
               </Link>
               <br/>tous droits réservés
@@ -84,7 +84,7 @@ export default function Sidenav({ theme = 'normal', titleSlice = 0 }: SidenavPro
           </div>
           <div className='d-flex justify-content-center'>
             <p className='m-0 text-muted fs-small'>
-              <Link to={'/notes-de-mise-a-jour'} className='fw-600 p-0'>
+              <Link to={'/notes-de-mise-a-jour'} className='fw-600 p-0' onClick={() => setToggled(false)}>
                 {version}
               </Link>
               <br/>version
@@ -92,8 +92,8 @@ export default function Sidenav({ theme = 'normal', titleSlice = 0 }: SidenavPro
           </div>
         </div>
       </nav>
-      <div className={`sidenav-toggler py-3 px-2 ${toggled?'toggled':''}`}>
-        <h4 className='p-2 fw-300 sidenav-toggler-title' onClick={() => setToggled(!toggled)}>
+      <div className={`sidenav-toggler py-3 ${toggled?'toggled':''}`}>
+        <h4 className='p-2 mx-0 fw-300 sidenav-toggler-title' onClick={() => setToggled(!toggled)}>
           <i className='fa-solid fa-bars fa-sm me-3'></i>MENU
         </h4>
       </div>

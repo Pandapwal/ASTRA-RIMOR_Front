@@ -3,8 +3,10 @@
 @import url('./styles/typography.css');
 
 .vh-100 {height: 100vh;}
+.mvh-100 {min-height: 100vh;}
 .vw-100 {width: 100wh;}
 .v-100 {height: 100vh;width: 100vw;}
+.v-80 {height: 80vh;width: 80vw;}
 
 .text-higlight {
   color: var(--active-link-color);
@@ -22,7 +24,14 @@
   background: var(--contrast-color);
   color: var(--font-color);
 }
+.bg-success {background: var(--success-color);}
+.bg-warning {background: var(--warning-color);}
+.bg-danger {background: var(--danger-color);}
 
-.contrast-font {
-  font-family: var(--contrast-font);
-}
+.contrast-font {font-family: var(--contrast-font);}
+
+.font-success {color: var(--success-color);}
+.font-warning {color: var(--warning-color);}
+.font-danger {color: var(--danger-color);}
+.muted {color: var(--font-muted-color);}
+.extra-muted {color: var(--font-extra-muted-color);}

@@ -86,6 +86,38 @@
   background: var(--font-color);
 }
 
+.landing-decoration .compass .cardinal-text:hover {
+  color: var(--font-color);
+  cursor: crosshair;
+  letter-spacing: .15rem;
+  font-weight: 200;
+}
+
+.landing-decoration .compass .north {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -100%);
+}
+.landing-decoration .compass .east {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(60%, -50%) rotate(90deg);
+}
+.landing-decoration .compass .south {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 100%) rotate(180deg);
+}
+.landing-decoration .compass .west {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-60%, -50%) rotate(270deg);
+}
+
 @keyframes pulse {
   0%    { background: var(--font-muted-color); }
   30%   { background: var(--font-muted-color); transform: scale(1);}

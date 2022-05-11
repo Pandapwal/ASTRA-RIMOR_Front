@@ -23,9 +23,8 @@
 
 /* FONT SIZES */
 
-.fs-small {
-  font-size: .8rem;
-}
+.fs-small { font-size: .8rem;}
+.fs-big { font-size: 1.2rem;}
 
 /* LINE HEIGHTS */
 

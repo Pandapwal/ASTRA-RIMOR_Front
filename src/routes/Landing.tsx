@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import VideoNav from '../components/landing/videoNav'
+// import VideoNav from '../components/landing/videoNav'
 import BigTitle from '../components/landing/bigTitle'
 import LandingDecoration from '../components/landing/landingDecoration'
 

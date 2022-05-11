@@ -51,7 +51,7 @@ export default function ContactForm() {
     <div className='d-flex flex-row col-11 col-md-10 col-lg-8 rounded-3 bg-dark overflow-hidden p-0 justify-content-center'>
       
       <div className='d-lg-flex d-none flex-column justify-content-center rounded-start col-lg-6 p-4 contact-info'
-      style={{backgroundImage: `url(${triangleCar})`, maxHeight: '70vh'}}>
+      style={{backgroundImage: `url(${triangleCar})`, maxHeight: '100%'}}>
       </div>
 
       <form ref={form} onSubmit={sendEmail} className='col-11 col-md-10 col-lg-6 p-2 py-4 p-lg-5'>

@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   background-color: var(--background-color);
-  min-height: calc(100vh - 60px);
+  min-height: 100vh;
 }
 
 @keyframes App-logo-spin {

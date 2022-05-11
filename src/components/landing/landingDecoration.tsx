@@ -34,7 +34,12 @@ export default function LandingDecoration() {
       <div className='circle pos-1 siz-1'></div>
       <div className='orbital siz-3'></div>
       <div className='orbital-big siz-4'></div>
-      <div className='h-50 w-25 thin-dots pos-3 siz-2'></div>
+      <div className='h-50 w-25 thin-dots pos-3 siz-2 compass extra-muted'>
+        <h1 className='cardinal-text north w-100'>Développeur web</h1>
+        <h1 className='cardinal-text east'>NodeJS</h1>
+        <h1 className='cardinal-text south'>ReactJS</h1>
+        <h1 className='cardinal-text west'>TypeScript</h1>
+      </div>
       <div className='dots pos-2 siz-1'></div>
       <div className='stripes pos-4 siz-2'></div>
       <div className='line-holder'>

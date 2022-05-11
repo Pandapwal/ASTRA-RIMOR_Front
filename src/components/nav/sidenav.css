@@ -26,8 +26,8 @@ nav .nav-link-container a {
   display: flex;
   position: inherit;
 }
-nav .nav-link-container:not(:last-of-type) {
-  border-bottom: 1px solid #fff;
+nav .nav-link-container {
+  border-bottom: 1px solid transparent;
 }
 
 nav .nav-link-container a:hover {
@@ -84,7 +84,7 @@ nav .nav-link-container a.active:after {
 }
 
 .sidenav .sidenav-toggler.toggled {
-  left: 255px;
+  left: 300px;
   transition: .3s;
 }
 
@@ -104,6 +104,8 @@ nav .nav-link-container a.active:after {
 .sidenav-toggler .sidenav-toggler-title {
   border: solid 1px transparent;
   transition: .3s;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 .sidenav-toggler .sidenav-toggler-title:hover {
   cursor: pointer;
@@ -115,4 +117,8 @@ nav .nav-link-container a.active:after {
 .sidenav-toggler .sidenav-toggler-title i {
   animation: rotate-burger .3s ease-out reverse forwards;
   transition: 0s;
+}
+
+.sidenav-footer a:hover {
+  color: var(--contrast-color);
 }
