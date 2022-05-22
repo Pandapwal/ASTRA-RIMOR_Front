@@ -25,14 +25,21 @@ export default function VersionNotes() {
       change==ChangeEnum.Modified?'modified':
       change==ChangeEnum.Removed?'removed':
       ''
+    let changeText: string =
+      change==ChangeEnum.Added?'ajouté':
+      change==ChangeEnum.Modified?'modifié':
+      change==ChangeEnum.Removed?'supprimé':
+      ''
 
     if(list===null) 
       return arr
 
     list.map((item,index) => {
       arr.push(
-        <div key={`${key}-${index}`} className='d-flex p-1'>
-          <p className={`p-1 m-1 change-type ${changeType}`}>{changeType}</p>
+        <div key={`${key}-${index}`} className='d-flex p-1 border-bottom-extra-muted'>
+          <div>
+            <p className={`py-1 px-2 my-1 me-2 text-center change-type ${changeType}`}>{changeText}</p>
+          </div>
           <p className='my-auto'>{item}</p>
         </div>
       )
@@ -50,7 +57,7 @@ export default function VersionNotes() {
     notes.map((note,index) => {
       arr.push(
         <div key={`${note.version}`} className='d-flex flex-column my-3 article'>
-          <div className='d-flex title'>
+          <div className='d-flex border-bottom-muted'>
             <h3 className='m-0 fw-800 px-2 py-1 version'>{note.version}</h3>
             <p className='my-auto mx-3 fw-400'>{note.date}</p>
           </div>

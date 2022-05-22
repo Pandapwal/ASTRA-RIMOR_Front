@@ -1,0 +1,145 @@
+.galaxy {
+  color: white;
+  overflow: hidden;
+  --orbit: 120px;
+  --revolution: 5s;
+}
+
+.galaxy .scale-buttons {
+  top: 0;
+  left: 0;
+}
+.galaxy .scale-buttons .zoom-slider:hover{
+  cursor: pointer;
+}
+
+.galaxy .translate-buttons {
+  top: 0;
+  right: 0;
+}
+.galaxy .translate-buttons .position-minimap{
+  width: 10vw;
+  height: 10vh;
+  background: var(--font-extra-muted-color);
+}
+
+.galaxy .translate-buttons .position-magnifier{
+  background: #5d18ddb6;
+  transform: translate(-50%, -50%);
+}
+.galaxy .translate-buttons .position-magnifier:hover{
+  cursor: grab;
+  background: #5d18dd;
+  border: solid 1px var(--font-color);
+}
+
+.galaxy .reset-buttons {
+  top: 0;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.galaxy .reset-buttons .reset-button{
+  color: var(--font-color);
+  background: none;
+  border: solid 2px #5d18dd;
+  transition: .3s;
+}
+.galaxy .reset-buttons .reset-button:hover{
+  background: #5d18dd;
+  transition: .3s;
+}
+
+.galaxy .astro {
+  width: 50px;
+  height: 50px;
+  border: solid 3px #f8e005;
+  color: #f8e005;
+  border-radius: 50%;
+}
+
+.galaxy .astro .sat{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  transform-origin: center;
+}
+
+.galaxy .astro .sat .sat{
+  width: 10px;
+  height: 10px;
+}
+.galaxy .astro .sat .sat .sat{
+  width: 4px;
+  height: 4px;
+}
+
+.galaxy .sat:hover {
+  cursor: crosshair;
+}
+/* .galaxy .sat:after {
+  content: 'testyy';
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  transition: .3s;
+}
+.galaxy .sat:hover:after {
+  width: auto;
+  transition: .3s;
+} */
+
+.galaxy .orbit {
+  animation: orbit var(--revolution) linear infinite;
+}
+
+.galaxy .satmosphere {
+  width: calc(var(--orbit)*2 + 40px);
+  height: calc(var(--orbit)*2 + 40px);
+  background-image: radial-gradient(
+    circle,
+    transparent 0% calc(var(--orbit) - 2px),
+    var(--font-extra-muted-color) calc(var(--orbit) - 2px) var(--orbit),
+    transparent var(--orbit) 100%);
+  /* border: 1px solid var(--font-muted-color); */
+  border-radius: 50%;
+  animation: slow-orbit calc(var(--revolution)*1.5) linear infinite paused;
+  transition: .3s;
+}
+
+.galaxy .satmosphere.depth-2, .galaxy .satmosphere.depth-3 {
+  top: calc((var(--orbit) + 5px) * -1);
+  left: calc((var(--orbit) + 5px) * -1);
+}
+
+.galaxy .satmosphere:hover {
+  cursor: crosshair;
+  /* border-color: var(--font-color); */
+  background-image: radial-gradient(
+    circle,
+    transparent 0% calc(var(--orbit) - 2px),
+    var(--font-color) calc(var(--orbit) - 2px) var(--orbit),
+    transparent var(--orbit) 100%);
+  animation-play-state: running;
+  transition: .3s;
+}
+.galaxy .sat .money {
+  display: none;
+  animation: slow-orbit calc(var(--revolution)*1.5) linear infinite reverse paused;
+  transition: .3s;
+}
+.galaxy .satmosphere:hover .sat .money {
+  display: block;
+  animation-play-state: running;
+  transition: .3s;
+}
+
+@keyframes orbit {
+  0% {transform: rotate(0deg) translateX(var(--orbit)) rotate(0deg);}
+  100% {transform: rotate(360deg) translateX(var(--orbit)) rotate(-360deg);}
+}
+
+@keyframes slow-orbit {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(-360deg);}
+}

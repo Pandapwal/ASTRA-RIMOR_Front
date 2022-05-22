@@ -1,0 +1,64 @@
+[
+  {
+    "name":"Frontend",
+    "color":"yellow",
+    "satellites": [
+      {
+        "name":"ReactJS",
+        "color":"yellow",
+        "satellites": [
+          {
+            "name":"TypeScript",
+            "color":"yellow"
+          }
+        ]
+      },
+      {
+        "name":"HTML",
+        "color":"yellow"
+      },
+      {
+        "name":"CSS3",
+        "color":"yellow"
+      }
+    ]
+  },
+  {
+    "name":"Backend",
+    "color":"blue",
+    "satellites": [
+      {
+        "name":"NodeJS",
+        "color":"yellow"
+      },
+      {
+        "name":"Laravel",
+        "color":"yellow"
+      }
+    ]
+  },
+  {
+    "name":"Mobile",
+    "color":"green",
+    "satellites": [
+      {
+        "name":"React Native",
+        "color":"yellow"
+      }
+    ]
+  },
+  {
+    "name":"Tools",
+    "color":"red",
+    "satellites": [
+      {
+        "name":"Git",
+        "color":"yellow"
+      },
+      {
+        "name":"Discord",
+        "color":"yellow"
+      }
+    ]
+  }
+]

@@ -1,8 +1,5 @@
 import { useEffect, useState } from 'react'
-// import CodingExperience from '../components/experience/CodingExperience'
-// import ExperienceCompass from '../components/experience/ExperienceCompass'
-// import ExperienceArena from '../components/experience/ExperienceArena'
-import ExperienceMap from '../components/experience/ExperienceMap'
+import ExperienceGalaxy from '../components/experience/ExperienceGalaxy'
 
 export default function Experience() {
   useEffect(() => {
@@ -12,10 +9,7 @@ export default function Experience() {
 
   return (
     <div className='route-container vh-100'>
-      {/* <ExperienceCompass/> */}
-      {/* <CodingExperience /> */}
-      {/* <ExperienceArena /> */}
-      <ExperienceMap />
+      <ExperienceGalaxy />
     </div>
   )
 }

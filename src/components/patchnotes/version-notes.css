@@ -1,5 +1,9 @@
-.article .title {
+.article .border-bottom-muted {
   border-bottom: solid 1px var(--font-muted-color);
+}
+
+.article .border-bottom-extra-muted:not(:last-child) {
+  border-bottom: solid 1px var(--font-extra-muted-color);
 }
 
 .article .version {
@@ -9,7 +13,8 @@
 
 .article .change-type {
   border-radius: 5px;
-  display: inline-block;
+  width: 90px;
+  display: block;
 }
 .article .change-type.added {background: var(--success-color);}
 .article .change-type.modified {background: var(--warning-color);}
