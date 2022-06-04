@@ -6,7 +6,6 @@
     "\t\t\tmessage: \"Note content can not be empty\"",
     "\t\t});",
     "\t}",
-  
     "\tNote.findByIdAndUpdate(req.params.noteId, {",
     "\t\ttitle: req.body.title || \"Untitled Note\"",
     "\t\tcontent: req.body.content",
