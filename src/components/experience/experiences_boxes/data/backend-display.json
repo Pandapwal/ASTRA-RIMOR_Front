@@ -1,0 +1,33 @@
+{
+  "texts":[
+    "exports.update = (req, res) => {",
+    "\tif(!req.body.content) {",
+    "\t\treturn res.status(400).send({",
+    "\t\t\tmessage: \"Note content can not be empty\"",
+    "\t\t});",
+    "\t}",
+  
+    "\tNote.findByIdAndUpdate(req.params.noteId, {",
+    "\t\ttitle: req.body.title || \"Untitled Note\"",
+    "\t\tcontent: req.body.content",
+    "\t}, {new: true})",
+    "\t.then(note => {",
+    "\t\tif(!note) {",
+    "\t\t\treturn res.status(404).send({",
+    "\t\t\t\tmessage: \"Note not found with id \" + req.params.noteId",
+    "\t\t\t});",
+    "\t\t}",
+    "\t\tres.send(note);",
+    "\t}).catch(err => {",
+    "\t\tif(err.kind === 'ObjectId') {",
+    "\t\t\treturn res.status(404).send({",
+    "\t\t\t\tmessage: \"Note not found with id \" + req.params.noteId",
+    "\t\t\t});",
+    "\t\t}",
+    "\t\treturn res.status(500).send({",
+    "\t\t\tmessage: \"Error updating note with id \" + req.params.noteId",
+    "\t\t});",
+    "\t});",
+    "};"
+  ]
+}

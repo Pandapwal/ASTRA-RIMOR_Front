@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import logo from '../logo.svg'
-import '../App.css'
+
+import PortfolioItems from '../components/portfolio/PortfolioItems'
 
 export default function Portfolio() {
 
@@ -10,10 +10,8 @@ export default function Portfolio() {
   },[])
 
   return (
-    <div className='route-container vh-100'>
-      <header className="App-header">
-        <h1>Portfolio</h1>
-      </header>
+    <div className='route-container mv-100'>
+      <PortfolioItems />
     </div>
   )
 }

@@ -1,0 +1,11 @@
+.portfolio-items .thumbnail {
+  height: 100px;
+  width: auto;
+}
+
+@media (min-width: 768px) {
+  .portfolio-items .thumbnail {
+    height: 150px;
+    width: auto;
+  }
+}

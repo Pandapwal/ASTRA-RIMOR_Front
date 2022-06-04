@@ -121,8 +121,12 @@ export default function ExperienceGalaxy() {
 
   return(
     <div className='d-flex justify-content-center align-items-center position-relative v-100 galaxy'
-    style={{background: `linear-gradient(#00000080, #00000080), url(${stars})`}}>
-      <div className='d-flex align-items-center justify-content-center position-relative v-80 border border-light overflow-hidden'>
+    style={{
+      background: `linear-gradient(#00000080, #00000080), url(${stars})`,
+      backgroundSize: `${100+(50*(zoom/5))}%`,
+      backgroundPosition: `${50 + (position.x/5)/(zoom*3)}% ${50 + (position.y/5)/(zoom*3)}%`
+    }}>
+      <div className='d-flex align-items-center justify-content-center position-relative v-80'>
         
         <div className='d-flex align-items-center justify-content-center position-absolute astro hw-100'
         style={{transform: `scale(${zoom}) translate(${position.x}%, ${position.y}%)`}}>

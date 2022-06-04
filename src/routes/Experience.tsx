@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import ExperienceGalaxy from '../components/experience/ExperienceGalaxy'
+import ExperienceBoxes from '../components/experience/ExperienceBoxes'
 
 export default function Experience() {
   useEffect(() => {
@@ -9,7 +9,7 @@ export default function Experience() {
 
   return (
     <div className='route-container vh-100'>
-      <ExperienceGalaxy />
+      <ExperienceBoxes />
     </div>
   )
 }

@@ -1,0 +1,12 @@
+.boxes .channel-list .channel.active, .boxes .channel-list .channel:hover {
+  cursor: pointer;
+  background: var(--font-color);
+  color: var(--contrast-color);
+}
+
+.boxes .channel-list .channel {
+  margin: 0 0.25rem 0 0.25rem;
+}
+.boxes .channel-list .channel:first-child, .boxes .channel-list .channel:last-child {
+  margin: 0.25rem;
+}
