@@ -36,10 +36,6 @@ function main(args) {
     let command = `git add --all & git commit -m "${params.message}" & git push & npm version ${params.version}`
 
     exec(command, (error, stdout, stderr) => checkResult(error, stdout, stderr))
-    // exec('git add --all', (error, stdout, stderr) => checkResult(error, stdout, stderr))
-    // .then(() => exec(`git commit -m "${params.message}"`, (error, stdout, stderr) => checkResult(error, stdout, stderr)))
-    // .then(() => exec('git push', (error, stdout, stderr) => checkResult(error, stdout, stderr)))
-    // .then(() => exec(`npm version ${params.version}`, (error, stdout, stderr) => checkResult(error, stdout, stderr)))
   }
 
   function checkVersionType(version){
