@@ -26,20 +26,20 @@ function main(args) {
       exit(1)
     }
     if (stderr) {
-        console.log(`stderr: ${stderr}`)
-        exit(1)
+      console.log(`stderr: ${stderr}`)
+      exit(1)
     }
     console.log(`stdout: ${stdout}`)
   }
 
-  function sendCommand() {
-    Object.entries(params).forEach(
-      ([key, value]) => console.log(key, value)
-    )
-    exec(`npm version ${params.version}`, (error, stdout, stderr) => checkResult(error, stdout, stderr))
-    // exec('git addd --all', (error, stdout, stderr) => checkResult(error, stdout, stderr))
-    // exec(`git commit -m "${params.message}"`, (error, stdout, stderr) => checkResult(error, stdout, stderr))
-    // exec('git push', (error, stdout, stderr) => checkResult(error, stdout, stderr))
+  function sendCommands() {
+    let command = `git add --all & git commit -m "${params.message}" & git push & npm version ${params.version}`
+
+    exec(command, (error, stdout, stderr) => checkResult(error, stdout, stderr))
+    // exec('git add --all', (error, stdout, stderr) => checkResult(error, stdout, stderr))
+    // .then(() => exec(`git commit -m "${params.message}"`, (error, stdout, stderr) => checkResult(error, stdout, stderr)))
+    // .then(() => exec('git push', (error, stdout, stderr) => checkResult(error, stdout, stderr)))
+    // .then(() => exec(`npm version ${params.version}`, (error, stdout, stderr) => checkResult(error, stdout, stderr)))
   }
 
   function checkVersionType(version){
@@ -75,7 +75,7 @@ function main(args) {
     let m = checkMessage(message)
 
     if(v&&m)
-      sendCommand()
+      sendCommands()
   }
 
   function checkArgsLength(args){
