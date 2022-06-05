@@ -10,3 +10,8 @@
 .boxes .channel-list .channel:first-child, .boxes .channel-list .channel:last-child {
   margin: 0.25rem;
 }
+
+.boxes .xp-column {
+  background: var(--font-color);
+  color: var(--contrast-color);
+}

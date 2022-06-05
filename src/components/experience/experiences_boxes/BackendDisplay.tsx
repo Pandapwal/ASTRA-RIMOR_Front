@@ -11,7 +11,7 @@ export default function BackendDisplay() {
 
   function handleEndOfRecursion(string: string, control: number) {
     if((control+1)<data.length) {
-      setText(oldText => [...oldText, <pre key={control+'yee'} className='text-start m-0'>{string}</pre>])
+      setText(oldText => [...oldText, <pre key={control+'yee'} className='text-start m-0 code-green'>{string}</pre>])
       typeWriter(0, data[control+1], control+1)
     }
   }
@@ -21,7 +21,7 @@ export default function BackendDisplay() {
       setTest(string.slice(0, index))
       let randIndex = Math.random()<0.05?index-1:index+1
       let randDelay = Math.floor(Math.random()*10)+50
-      setTimeout(() => typeWriter(randIndex, string, control), randDelay)
+      setTimeout(() => typeWriter((randIndex<0?0:randIndex), string, control), randDelay)
     }
     else {
       handleEndOfRecursion(string, control)
@@ -42,7 +42,7 @@ export default function BackendDisplay() {
     <div className='position-relative backend-display hw-100 p-3 overflow-hidden'>
       <div className='d-flex flex-column hw-100 justify-content-start'>
         {text}
-        <pre key={'peptio'} className='text-start m-0'>{test}</pre>
+        <pre key={'peptio'} className='text-start m-0 code-green'>{test}</pre>
       </div>
     </div>
   )

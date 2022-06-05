@@ -23,6 +23,21 @@ export default function ExperienceBoxes() {
     setCounter(counter+c)
   }
 
+  function createXP(items: string[]|null): ReactNode[] {
+    let arr: ReactNode[] = []
+
+    if(items===null)
+      return arr
+
+    items.map((item, index) => {
+      arr.push(
+        <p className='px-2 text-start'>{item}</p>
+      )
+    })
+
+    return arr
+  }
+
   function createBoxes(items: ExperienceType[]|null): ReactNode[] {
     let arr: ReactNode[] = []
 
@@ -42,6 +57,20 @@ export default function ExperienceBoxes() {
     return arr
   }
 
+  function checkFiltered(object: any): string[] {
+    let arr: string[] = []
+
+    object.concepts&&object.stack?
+    arr = [...object.concepts, ...object.stack]
+    :object.concepts?
+      arr = object.concepts
+      :object.stack?
+        arr = object.stack
+        :arr = ['/']
+
+    return arr
+  }
+
   useEffect(() => {
     setActiveChannel(data[0].category)
   },[])
@@ -51,8 +80,16 @@ export default function ExperienceBoxes() {
       <div className='d-flex flex-column col-md-2 border position-relative h-100 channel-list'>
         {createBoxes(data.length>0?data:null)}
       </div>
-      <div className='d-flex justify-content-center align-items-center col-md-10 h-100 television'>
+      <div className='d-flex justify-content-center align-items-center col h-100 television'>
         {categoriesDict[activeChannel]}
+      </div>
+      <div className='d-flex flex-column col-1 border-start position-relative h-100 xp-list'>
+        <h3 className='xp-column'>XP</h3>
+        {data.filter((item) => item.category == activeChannel).map((filtered) => (
+          <div>
+            {createXP(filtered.concepts||filtered.stack?checkFiltered(filtered):null)}
+          </div>
+        ))}
       </div>
     </div>
   )
