@@ -1,5 +1,7 @@
 import { ReactNode, useEffect, useState } from 'react'
 
+// import { getGithubUser } from './githubApiCalls'
+
 import './version-notes.css'
 
 import versions from '../../data/versions.json'
@@ -83,12 +85,12 @@ export default function VersionNotes() {
   useEffect(() => {
     setNotes(versions.sort((a: NoteType, b: NoteType) => a.version === b.version ? 0 : a.version > b.version ? -1 : 1))
     setArticles(createNotes(notes))
-    console.log('version')
   },[])
 
   return(
     <div className='col-4 d-flex flex-column justify-content-start'>
       {articles}
+      {/* {getGithubUser('Pandapwal')} */}
     </div>
   )
 }
