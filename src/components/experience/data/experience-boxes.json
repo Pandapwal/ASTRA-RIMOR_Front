@@ -3,20 +3,32 @@
     "category":"frontend",
     "concepts":[
       "SEO",
-      "SXO"
+      "SXO",
+      "Responsive",
+      "Accessibilité"
     ],
     "stack":[
+      "JavaScript",
       "ReactJS",
-      "TypeScript"
+      "TypeScript",
+      "HTML",
+      "CSS"
     ]
   },
   {
     "category":"backend",
     "concepts":[
-      "API REST"
+      "API REST",
+      "Authentification"
     ],
     "stack":[
-      "NodeJS"
+      "JavaScript",
+      "NodeJS",
+      "Express",
+      "Mongoose",
+      "Sequelize",
+      "PHP",
+      "Laravel"
     ]
   },
   {

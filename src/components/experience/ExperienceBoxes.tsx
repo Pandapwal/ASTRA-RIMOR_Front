@@ -30,9 +30,15 @@ export default function ExperienceBoxes() {
       return arr
 
     items.map((item, index) => {
-      arr.push(
-        <p className='px-2 text-start'>{item}</p>
-      )
+      if(item=='blank') {
+        arr.push(
+          <hr></hr>
+        )
+      } else {
+        arr.push(
+          <p className='px-2 text-start'>{item}</p>
+        )
+      }
     })
 
     return arr
@@ -61,7 +67,7 @@ export default function ExperienceBoxes() {
     let arr: string[] = []
 
     object.concepts&&object.stack?
-    arr = [...object.concepts, ...object.stack]
+    arr = [...object.concepts, 'blank', ...object.stack]
     :object.concepts?
       arr = object.concepts
       :object.stack?
@@ -77,10 +83,10 @@ export default function ExperienceBoxes() {
 
   return(
     <div className='d-flex justify-content-center align-items-center position-relative v-80 boxes'>
-      <div className='d-flex flex-column col-md-2 border position-relative h-100 channel-list'>
+      <div className='d-flex flex-column col-2 border position-relative h-100 channel-list'>
         {createBoxes(data.length>0?data:null)}
       </div>
-      <div className='d-flex justify-content-center align-items-center col h-100 television'>
+      <div className='d-flex justify-content-center align-items-center position-relative col-9 h-100 television'>
         {categoriesDict[activeChannel]}
       </div>
       <div className='d-flex flex-column col-1 border-start position-relative h-100 xp-list'>

@@ -1,0 +1,111 @@
+.frontend-display {
+  color: var(--contrast-color);
+  perspective: 600px;
+}
+
+.frontend-display .tiling {
+  transform: rotateX(60deg) rotateZ(45deg);
+}
+
+.scene {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transform: rotateX(50deg) rotateZ(45deg) translate(-10%, -10%);
+}
+
+.scene .row {
+  transform-style: preserve-3d;
+}
+
+.tile {
+  width: 250px;
+  height: 250px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(-125px);
+  transition: transform .5s;
+}
+
+.tile:hover {
+  cursor: pointer;
+  transform: translateZ(-80px);
+}
+.tile:hover .face-top {
+  background: var(--contrast-color);
+  color: var(--font-color);
+  font-size: 10rem;
+}
+.tile:hover p {
+  text-shadow: 3px 3px var(--contrast-color-dark);
+}
+
+.face {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  line-height: 250px;
+  font-size: 40px;
+  font-weight: bold;
+  color: var(--contrast-color);
+  text-align: center;
+}
+
+.face-top  {
+  border: 2px solid var(--background-color);
+  background: #a5bfd8; }
+.face-right, .face-back-left  { background: var(--contrast-color-tint); }
+.face-left, .face-back-right { background: var(--contrast-color-dark); }
+
+.face-top  { transform: rotateY(  0deg) translateZ(125px); }
+.face-right  { transform: rotateY( 90deg) translateZ(125px); }
+.face-left { transform: rotateX(-90deg) translateZ(125px); }
+.face-back-right  { transform: rotateX(-90deg) translateZ(-125px); }
+.face-back-left { transform: rotateY(90deg) translateZ(-125px); }
+
+.scene .kanjis {
+  transform-style: preserve-3d;
+  top: 0;
+  left: 0;
+  background: var(--background-color);
+  height: 250px;
+  width: 100%;
+}
+.scene .kanjis.right {
+  transform-origin: bottom;
+  transform: translateY(-100%) rotateX(-90deg);
+}
+.scene .kanjis.left {
+  transform-origin: top left;
+  transform: rotateZ(90deg) rotateX(90deg);
+}
+
+.scene .kanji {
+  color: transparent;
+  font-size: 8rem;
+}
+.scene .kanji.hovered {
+  color: var(--contrast-color);
+  text-shadow: 2px 2px var(--font-color);
+  animation: glowing 1s linear infinite;
+}
+.scene .kanjis.left .kanji {
+  transform: rotate(180deg);
+}
+
+@keyframes glowing {
+  0% {text-shadow:
+      2px 0px 2px transparent,
+      0px 2px 2px transparent,
+      -2px 0px 2px transparent,
+      0px -2px 2px transparent;}
+  50% {text-shadow:
+      2px 0px 2px var(--font-color),
+      0px 2px 2px var(--font-color),
+      -2px 0px 2px var(--font-color),
+      0px -2px 2px var(--font-color);}
+  100% {text-shadow:
+      2px 0px 2px transparent,
+      0px 2px 2px transparent,
+      -2px 0px 2px transparent,
+      0px -2px 2px transparent;}
+}

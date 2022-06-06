@@ -11,6 +11,11 @@
   margin: 0.25rem;
 }
 
+.boxes .television {
+  border-right: solid 5px var(--background-color);
+  border-left: solid 5px var(--background-color);
+}
+
 .boxes .xp-column {
   background: var(--font-color);
   color: var(--contrast-color);
