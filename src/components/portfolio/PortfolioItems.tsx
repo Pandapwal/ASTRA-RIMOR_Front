@@ -1,25 +1,25 @@
-import { ReactNode, useEffect, useState } from 'react'
+import { CSSProperties, ReactNode, useEffect, useState } from 'react'
 
-import './portfolio-items.css'
-
-import car from '../../assets/images/triangle_car.png'
+import PortfolioItemCard from './PortfolioItemCard'
 
 import data from '../../data/portfolio.json'
 
 interface PortfolioItem {
-  name: string,
-  description: string,
-  thumbnail: string,
-  logo: string,
-  url: string
+    name: string,
+    description: string,
+    thumbnail: string,
+    logo: string,
+    url: string,
+    color: string
 }
 
 const defaultItem = {
-  name: 'nom',
-  description: 'decription',
-  thumbnail: 'miniature',
-  logo: 'logo',
-  url: 'adresse'
+    name: 'projet',
+    description: 'decription',
+    thumbnail: 'miniature',
+    logo: 'logo',
+    url: 'adresse',
+    color: '--background-color'
 }
 
 export default function PortfolioItems() {
@@ -33,14 +33,10 @@ export default function PortfolioItems() {
     let arr: ReactNode[] = []
 
     data.map((item,index) => {
-      let tmp = initItem(item)
+        let tmp = initItem(item)
+
       arr.push(
-        <div className='col p-2'>
-          <div className='border border-light'>
-            <h3>{tmp.name}</h3>
-            <img src={car} className='thumbnail'></img>
-          </div>
-        </div>
+        <PortfolioItemCard data={tmp} />
       )
     })
     
@@ -54,7 +50,7 @@ export default function PortfolioItems() {
   return(
     <div className='w-100 portfolio-items'>
       <h1 className='fst-italic'>PORTFOLIO</h1>
-      <div className='mx-auto w-75 row row-cols-1 row-cols-lg-2 row-cols-xl-3 row-cols-xxl-4'>
+      <div className='mx-auto w-75 row row-cols-1 row-cols-lg-2 row-cols-xl-3 row-cols-xxl-4 justify-content-center'>
         {items}
       </div>
     </div>

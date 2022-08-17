@@ -4,26 +4,31 @@
     "description":"Mon site perso :)",
     "thumbnail":"",
     "logo":"",
-    "url":"https://astrarimor.fr"
+    "url":"https://astrarimor.fr",
+    "color":"#f80381"
   },
   {
     "name":"CARBOFRANCE",
     "description":"Charbon de bois",
     "thumbnail":"",
     "logo":"",
-    "url":"https://carbofrance.fr"
+    "url":"https://carbofrance.fr",
+    "color":"#ecaa11"
   },
   {
     "name":"RESIPROTEC",
     "description":"Application de sols résine",
     "thumbnail":"",
     "logo":"",
-    "url":"https://resiprotec.com"
+    "url":"https://resiprotec.com",
+    "color":"#213774"
   },
   {
+    "name":"BETOREP",
     "description":"Application de sols résine",
     "thumbnail":"",
     "logo":"",
-    "url":"https://resiprotec.com"
+    "url":"https://resiprotec.com",
+    "color":"#69aceb"
   }
 ]
