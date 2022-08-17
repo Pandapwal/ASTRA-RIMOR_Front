@@ -20,7 +20,7 @@ export default function BackendDisplay() {
     if (index <= string.length) {
       setTest(string.slice(0, index))
       let randIndex = Math.random()<0.05?index-1:index+1
-      let randDelay = Math.floor(Math.random()*10)+50
+      let randDelay = Math.floor(Math.random()*50)+150
       setTimeout(() => typeWriter((randIndex<0?0:randIndex), string, control), randDelay)
     }
     else {
@@ -42,7 +42,7 @@ export default function BackendDisplay() {
     <div className='position-relative backend-display hw-100 p-3 overflow-hidden'>
       <div className='d-flex flex-column hw-100 justify-content-start'>
         {text}
-        <pre key={'peptio'} className='text-start m-0 code-green'>{test}</pre>
+        <pre key={'peptio'} className='text-start m-0 code-green live'>{test}</pre>
       </div>
     </div>
   )

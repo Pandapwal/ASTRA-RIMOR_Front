@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useState } from 'react'
+import { CSSProperties, ReactNode, useEffect, useState } from 'react'
 
 import FrontendDisplay from './experiences_boxes/FrontendDisplay'
 import BackendDisplay from './experiences_boxes/BackendDisplay'
@@ -51,11 +51,12 @@ export default function ExperienceBoxes() {
       return arr
 
     items.map((item, index) => {
-      let last = index==items.length?true:false
       arr.push(
         <div key={`${index}_pepito`} className={`d-flex align-items-center row flex-grow-1 channel ${activeChannel==item.category?'active':''}`}
         onClick={() => setActiveChannel(item.category)}>
-          <h3 className='p-0 m-0 text-uppercase'>{item.category}</h3>
+          <div className='p-0 m-0 hw-100 d-flex align-items-center justify-content-center'>
+            <h2 className='p-2 m-0 text-uppercase'>{item.category}</h2>
+          </div>
         </div>
       )
     })
@@ -83,7 +84,7 @@ export default function ExperienceBoxes() {
 
   return(
     <div className='d-flex justify-content-center align-items-center position-relative v-80 boxes'>
-      <div className='d-flex flex-column col-2 border position-relative h-100 channel-list'>
+      <div className='d-flex flex-column col-2 position-relative h-100 channel-list overflow-hidden'>
         {createBoxes(data.length>0?data:null)}
       </div>
       <div className='d-flex justify-content-center align-items-center position-relative col-9 h-100 television'>

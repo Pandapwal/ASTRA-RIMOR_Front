@@ -1,3 +1,15 @@
 .backend-display .code-green {
-  color: #19d600;
+  color: var(--contrast-color);
+}
+
+.backend-display .code-green.live:after {
+  content: '|';
+  color: var(--font-color);
+  animation: glow .8s linear infinite;
+}
+
+@keyframes glow {
+  0% {color: var(--font-color);}
+  50% {color: transparent;}
+  100% {color: var(--font-color);}
 }
